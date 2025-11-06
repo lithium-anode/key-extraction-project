@@ -33,8 +33,7 @@
 ### Run:
 1. Start the SSH server:
    `sudo systemctl start ssh`
-2. Start packet capture on Wireshark.
-3. Run the file in the Scripts/ directory:
+2. Run the file in the Scripts/ directory:
      - `sudo bpftrace monitor_kex.bt # to only see the extracted key`
-     - `python3 listener.py          # for automatice network capture and decryption`
-5. Connect to the server from the client device
+     - `python3 listener.py          # for automatic network capture and decryption`
+3. Connect to the server from the client device
