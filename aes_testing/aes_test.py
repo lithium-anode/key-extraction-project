@@ -54,14 +54,12 @@ def process_entry(data, direction):
 
         payload_start = idx + 4
         payload_end = payload_start + current_packet_len
-        # print(f"current_packet_len: {current_packet_len}\npayload_start: {payload_start}\npayload_end: 
-{payload_end}", file=f)
+        # print(f"current_packet_len: {current_packet_len}\npayload_start: {payload_start}\npayload_end: {payload_end}", file=f)
         ciphertext = full_payload[payload_start:payload_end]
         
         plaintext = cipher.decrypt(ciphertext)
 
-        readable = bytes(b if b in printable_chars else ord('.') for b in plaintext).decode('ascii', 
-errors='replace')
+        readable = bytes(b if b in printable_chars else ord('.') for b in plaintext).decode('ascii', errors='replace')
         print(f"[{direction}] Sub-Packet: Len={current_packet_len}", file=f)
         print(f"    Decrypted: {readable}", file=f)
 
